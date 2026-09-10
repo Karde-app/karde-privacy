@@ -157,11 +157,24 @@
   internet access, contacts, location, your microphone, or access to your photo library.
 </p>
 <p>
-  Two further entries may appear on Karde's Google Play permission list on older versions
-  of Android — a storage entry and an older fingerprint entry. Neither is requested by
-  Karde. They are added automatically by the software libraries Karde is built with, and
-  Karde does not use them.
+  Three further entries appear on Karde's Google Play permission list. Karde does not
+  ask you for any of them; they come from the software libraries it is built with.
 </p>
+<table>
+  <tr><th>Entry</th><th>What it is for</th></tr>
+  <tr>
+    <td><code>VIBRATE</code></td>
+    <td>So an expiry reminder can buzz rather than arrive silently.</td>
+  </tr>
+  <tr>
+    <td><code>USE_FINGERPRINT</code></td>
+    <td>The older form of the fingerprint permission. It is what makes fingerprint unlock work on Android 7 and 8, where the newer one does not yet exist.</td>
+  </tr>
+  <tr>
+    <td><code>WRITE_EXTERNAL_STORAGE</code></td>
+    <td>Declared by the camera library and limited to Android 9 and earlier. Karde writes only to its own private area; on Android 10 and later this entry does not apply at all.</td>
+  </tr>
+</table>
 
 <h2>6. Photographs of documents</h2>
 <p>
