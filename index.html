@@ -63,7 +63,7 @@
 
 <header>
   <h1>Karde — Privacy Policy</h1>
-  <p class="sub">Last updated: 5 September 2026 · Applies to the Karde Android app (<code>com.karde.app</code>)</p>
+  <p class="sub">Last updated: 10 September 2026 · Applies to the Karde Android app (<code>com.karde.app</code>)</p>
 </header>
 
 <p class="lede">
@@ -125,18 +125,42 @@
 </p>
 
 <h2>5. Permissions Karde asks for</h2>
+<p>
+  Karde asks for each of these at the moment it needs it, never all at once when the app
+  first opens. Refusing any of them leaves the rest of the app working.
+</p>
 <table>
   <tr><th>Permission</th><th>Why</th></tr>
   <tr>
     <td><code>USE_BIOMETRIC</code></td>
     <td>To ask for your fingerprint or face before unlocking the app or revealing an item. The biometric check happens inside Android; Karde never receives your fingerprint or face data.</td>
   </tr>
+  <tr>
+    <td><code>CAMERA</code></td>
+    <td>To photograph a card or document, using a camera screen inside Karde so the picture never passes through another app. Asked for when you tap <strong>Take a photo</strong>, and at no other time. The photograph is encrypted into your vault on this device. If you refuse, Karde offers to use your phone's own camera app instead.</td>
+  </tr>
+  <tr>
+    <td><code>POST_NOTIFICATIONS</code></td>
+    <td>To show you a reminder before a card or document expires. Asked for the first time Karde has a reminder to set. Every reminder is created and shown on this device; nothing about it is sent anywhere.</td>
+  </tr>
+  <tr>
+    <td><code>SCHEDULE_EXACT_ALARM</code></td>
+    <td>To make a reminder arrive at the time it was set for rather than whenever Android next feels like it. It is used only for your own expiry reminders.</td>
+  </tr>
+  <tr>
+    <td><code>RECEIVE_BOOT_COMPLETED</code></td>
+    <td>To put your reminders back in place after the phone restarts. Android discards pending reminders on restart, so without this a reminder you had set would silently never arrive.</td>
+  </tr>
 </table>
 <p>
-  That is the entire list. Karde does not request internet access, the camera permission,
-  contacts, location, or access to your photo library. When you attach a photograph, Karde
-  hands the job to the camera or gallery app you already have and receives only the single
-  picture you chose.
+  That is the entire list of what Karde asks you for. It does <strong>not</strong> request
+  internet access, contacts, location, your microphone, or access to your photo library.
+</p>
+<p>
+  Two further entries may appear on Karde's Google Play permission list on older versions
+  of Android — a storage entry and an older fingerprint entry. Neither is requested by
+  Karde. They are added automatically by the software libraries Karde is built with, and
+  Karde does not use them.
 </p>
 
 <h2>6. Photographs of documents</h2>
@@ -149,26 +173,57 @@
 
 <h2>7. Backups</h2>
 <p>
-  Karde can export your whole vault to a single encrypted file. This happens only when you
-  ask for it. You choose the passphrase and you choose where the file is saved.
+  Karde can write your whole vault to a single encrypted file. This happens only if you
+  turn it on. You choose the passphrase and you choose the folder the file is kept in.
 </p>
 <p>
-  Nothing is uploaded anywhere. The passphrase is never stored and never leaves your
-  device, which also means we cannot recover it for you. If you lose the passphrase, the
-  backup file cannot be opened by anyone, including us.
+  You can also switch on <strong>automatic backup</strong>, which keeps that one file up to
+  date whenever something in your vault changes, so you do not have to remember to do it.
+  It writes to the same folder you picked, replacing the same file each time.
+</p>
+<p>
+  <strong>Karde never uploads anything itself.</strong> It has no internet permission, so
+  it cannot. It writes the file to the folder you chose, and nothing more. If the folder
+  you chose belongs to a cloud service — Google Drive, for instance — then that service's
+  own app syncs the file, under its own terms, exactly as it would for any other file you
+  put there. The file is encrypted with your passphrase before Karde writes it, so the
+  cloud service holds something it cannot read.
+</p>
+<p>
+  The passphrase is never stored and never leaves your device, which also means we cannot
+  recover it for you. If you lose the passphrase, the backup file cannot be opened by
+  anyone, including us.
 </p>
 <p>
   Android's own automatic cloud backup is switched off for Karde
   (<code>allowBackup="false"</code>), so your vault is never copied to Google Drive.
 </p>
 
-<h2>8. Screenshots</h2>
+<h2>8. Reminders</h2>
+<p>
+  Karde can remind you before a card or document expires. The dates it uses are the ones
+  you typed in yourself, every reminder is worked out and shown on this device, and nothing
+  about them is sent anywhere.
+</p>
+<p>
+  A reminder deliberately names nothing. It tells you how many items are expiring, not
+  which ones and not whose, because a notification appears on your lock screen where
+  anyone standing nearby can read it.
+</p>
+<p>
+  Reminders rely on your phone letting Karde do a small amount of work in the background.
+  Some phones — Samsung and Xiaomi especially — restrict that by default, and a reminder
+  will not arrive until you allow it. Karde tells you when it can see this is the case,
+  rather than letting you believe a reminder is coming when it is not.
+</p>
+
+<h2>9. Screenshots</h2>
 <p>
   Karde marks its windows as secure, so Android blocks screenshots and screen recording
   inside the app and hides its contents from the recent-apps preview.
 </p>
 
-<h2>9. Deleting your data</h2>
+<h2>10. Deleting your data</h2>
 <p>
   You are in full control and no request to us is necessary, because we hold nothing to
   delete. You can:
@@ -184,13 +239,13 @@
   saved yourself are not affected — delete those wherever you put them.
 </p>
 
-<h2>10. Children</h2>
+<h2>11. Children</h2>
 <p>
   Karde is not directed at children and is not designed for or marketed to anyone under 13.
   It collects no information from anyone, children included.
 </p>
 
-<h2>11. Third parties</h2>
+<h2>12. Third parties</h2>
 <p>
   Karde contains no advertising, no analytics, and no third-party tracking of any kind. No
   data is shared with any third party, because no data is gathered in the first place.
@@ -201,14 +256,14 @@
   outside Karde and outside our sight.
 </p>
 
-<h2>12. Changes to this policy</h2>
+<h2>13. Changes to this policy</h2>
 <p>
   If this policy changes, the new version will be posted at this address and the date at
   the top will be updated. Substantive changes will also be noted in the app's release
   notes on Google Play.
 </p>
 
-<h2>13. Contact</h2>
+<h2>14. Contact</h2>
 <p>
   Questions, concerns, or anything unclear:
   <a href="mailto:support@getgubae.com">support@getgubae.com</a>.
